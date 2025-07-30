@@ -1,24 +1,49 @@
 {
-  "name": "Scalable SaaS",
+  "name": "linkmanager-saas",
+  "version": "1.0.0",
+  "description": "Professional SaaS platform for link management and analytics",
   "private": true,
   "scripts": {
-    "build": "turbo run build",
-    "dev": "turbo run dev",
-    "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "dev": "cd frontend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd apps/backend && npm run start:dev",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd apps/backend && npm run build",
+    "start": "cd frontend && npm run start",
+    "start:frontend": "cd frontend && npm run start",
+    "start:backend": "cd apps/backend && npm run start:prod",
+    "install:all": "npm install && cd frontend && npm install && cd ../../apps/backend && npm install",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm run test",
+    "test:backend": "cd apps/backend && npm run test",
+    "lint": "npm run lint:frontend && npm run lint:backend",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd apps/backend && npm run lint",
+    "db:setup": "cd apps/backend && npm run db:generate && npm run db:push && npm run db:seed",
+    "clean": "rm -rf node_modules frontend/node_modules apps/backend/node_modules",
+    "status": "echo \"Frontend: http://localhost:3000\" && echo \"Backend: http://localhost:3001\" && echo \"API Docs: http://localhost:3001/api/docs\""
   },
   "devDependencies": {
-    "prettier": "^3.6.2",
-    "turbo": "^2.5.5",
-    "typescript": "5.8.3"
   },
-  "engines": {
-    "node": ">=18"
+  "keywords": [
+    "saas",
+    "link-management",
+    "url-shortener",
+    "analytics",
+    "nextjs",
+    "nestjs",
+    "typescript",
+    "tailwindcss"
+  ],
+  "author": "LinkManager Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/linkmanager-saas.git"
   },
-  "packageManager": "npm@11.4.1",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "bugs": {
+    "url": "https://github.com/your-username/linkmanager-saas/issues"
+  },
+  "homepage": "https://linkmanager.com"
 }
