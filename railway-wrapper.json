@@ -1,0 +1,8 @@
+{
+  "name": "scalable-saas-backend-wrapper",
+  "private": true,
+  "scripts": {
+    "build": "cd apps/backend && npm install && npm run build",
+    "start": "cd apps/backend && npm run start:prod"
+  }
+} 
