@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "Professional SaaS platform for link management and analytics",
   "private": true,
+  "packageManager": "npm@10.2.4",
+  "workspaces": [
+    "frontend",
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "cd frontend && npm run dev",
     "dev:frontend": "cd frontend && npm run dev",
     "dev:backend": "cd apps/backend && npm run start:dev",
     "build": "npm run build:frontend && npm run build:backend",
+    "build:vercel": "cd frontend && npm run build",
     "build:frontend": "cd frontend && npm run build",
     "build:backend": "cd apps/backend && npm run build",
     "start": "cd frontend && npm run start",
@@ -27,6 +34,7 @@
     "status": "echo \"Frontend: http://localhost:3000\" && echo \"Backend: http://localhost:3001\" && echo \"API Docs: http://localhost:3001/api/docs\""
   },
   "devDependencies": {
+    "turbo": "^2.0.0"
   },
   "keywords": [
     "saas",
